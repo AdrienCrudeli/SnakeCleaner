@@ -17,6 +17,7 @@ namespace Snake
 
         private static void Main(string[] args)
         {
+            //Initialisation of objects
             GameBounds bounds = GameBounds.Create(InitialScreenWidth, InitialScreenHeight);
             Random random = new Random();
 
@@ -27,10 +28,12 @@ namespace Snake
             Renderer renderer = new Renderer();
             InputHandler inputHandler = new InputHandler();
 
+            //Main Thread
             while (!gameState.IsGameOver)
             {
                 renderer.Clear();
 
+                //condition, snake collision to borders
                 if (snake.IsTouchingBorder(bounds))
                 {
                     gameState.IsGameOver = true;
@@ -38,6 +41,7 @@ namespace Snake
 
                 renderer.DrawBorders(bounds);
 
+                //condition, sneak eat berry
                 if (snake.HeadX == berry.X && snake.HeadY == berry.Y)
                 {
                     gameState.Score++;
@@ -46,6 +50,7 @@ namespace Snake
 
                 renderer.DrawTail(snake.Tail);
 
+                //snake self collision
                 if (snake.IsTouchingTail())
                 {
                     gameState.IsGameOver = true;
@@ -56,6 +61,7 @@ namespace Snake
                     break;
                 }
 
+                
                 renderer.DrawHeadAndBerry(snake, berry);
                 inputHandler.CaptureDirectionForTick(snake, TickDurationMs);
 
@@ -68,8 +74,12 @@ namespace Snake
         }
     }
 
-    internal sealed class GameState
-    {
+    //internal because accessible only on that code
+    // we could sealed cause no need inherited, but i dont do it
+    internal class GameState
+    {       
+
+        //for counting game parameter
         public GameState(int initialScore)
         {
             Score = initialScore;
@@ -81,8 +91,9 @@ namespace Snake
         public bool IsGameOver { get; set; }
     }
 
-    internal sealed class GameBounds
-    {
+    internal class GameBounds
+    {   
+        //for the limits of the game
         private GameBounds(int width, int height)
         {
             Width = width;
@@ -98,22 +109,16 @@ namespace Snake
             int width = targetWidth;
             int height = targetHeight;
 
-            if (OperatingSystem.IsWindows())
-            {
-                Console.WindowHeight = targetHeight;
-                Console.WindowWidth = targetWidth;
-                width = Console.WindowWidth;
-                height = Console.WindowHeight;
-            }
-            else
-            {
-                width = Math.Min(Console.WindowWidth, targetWidth);
-                height = Math.Min(Console.WindowHeight, targetHeight);
-            }
+            //would have beend different if operating system was windows
+            width = Math.Min(Console.WindowWidth, targetWidth);
+            height = Math.Min(Console.WindowHeight, targetHeight);
+            
 
             return new GameBounds(width, height);
         }
     }
+
+    //switch (direction) with enum is explicit and maintainable.
 
     internal enum Direction
     {
@@ -123,6 +128,8 @@ namespace Snake
         Right
     }
 
+    //readonly because we choose to add position, and not change the old ones
+    //It’s just data X and Y, very small, one position should not affect another thats why we declare it as struct
     internal readonly struct Position
     {
         public Position(int x, int y)
@@ -136,7 +143,8 @@ namespace Snake
         public int Y { get; }
     }
 
-    internal sealed class SnakeEntity
+    //all parameter of snake and methods
+    internal class SnakeEntity
     {
         private readonly List<Position> _tail = new List<Position>();
 
@@ -216,7 +224,7 @@ namespace Snake
             return false;
         }
     }
-
+    // concerning object berry
     internal readonly struct Berry
     {
         public Berry(int x, int y)
@@ -242,7 +250,9 @@ namespace Snake
         }
     }
 
-    internal sealed class Renderer
+    //Drawing methods
+
+    internal class Renderer
     {
         public void Clear()
         {
@@ -272,6 +282,7 @@ namespace Snake
             }
         }
 
+        
         public void DrawTail(IReadOnlyList<Position> tail)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -310,6 +321,7 @@ namespace Snake
 
     internal sealed class InputHandler
     {
+        //keyListener
         public void CaptureDirectionForTick(SnakeEntity snake, int tickDurationMs)
         {
             DateTime tickStart = DateTime.Now;
@@ -346,7 +358,7 @@ namespace Snake
                 }
             }
         }
-
+        //keyhandler
         private static Direction? GetDirectionFromKey(ConsoleKey key)
         {
             switch (key)
@@ -364,6 +376,7 @@ namespace Snake
             }
         }
 
+        //some boolean class, not necessary, we could use condition, but i think its clearer
         private static bool IsOpposite(Direction a, Direction b)
         {
             return (a == Direction.Up && b == Direction.Down) ||
