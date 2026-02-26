@@ -32,30 +32,34 @@ namespace Snake
                     continue;
                 }
 
-                Direction? requestedDirection = GetDirectionFromKey(key);
-
-                if (requestedDirection.HasValue && !IsOpposite(requestedDirection.Value, snake.Direction))
+                if (TryGetDirectionFromKey(key, out Direction requestedDirection) &&
+                    !IsOpposite(requestedDirection, snake.Direction))
                 {
-                    snake.Direction = requestedDirection.Value;
+                    snake.Direction = requestedDirection;
                     buttonPressed = true;
                 }
             }
         }
 
-        private static Direction? GetDirectionFromKey(ConsoleKey key)
+        private static bool TryGetDirectionFromKey(ConsoleKey key, out Direction direction)
         {
             switch (key)
             {
                 case ConsoleKey.UpArrow:
-                    return Direction.Up;
+                    direction = Direction.Up;
+                    return true;
                 case ConsoleKey.DownArrow:
-                    return Direction.Down;
+                    direction = Direction.Down;
+                    return true;
                 case ConsoleKey.LeftArrow:
-                    return Direction.Left;
+                    direction = Direction.Left;
+                    return true;
                 case ConsoleKey.RightArrow:
-                    return Direction.Right;
+                    direction = Direction.Right;
+                    return true;
                 default:
-                    return null;
+                    direction = default;
+                    return false;
             }
         }
 
