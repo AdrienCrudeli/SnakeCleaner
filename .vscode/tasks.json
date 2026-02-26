@@ -7,12 +7,9 @@
       "command": "dotnet",
       "args": [
         "build",
-        "${workspaceFolder}/SnakeProject.csproj",
+        "${workspaceFolder}/Snake project/SnakeProject.csproj",
         "/property:GenerateFullPaths=true"
       ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
       "problemMatcher": "$msCompile",
       "group": {
         "kind": "build",
@@ -26,11 +23,8 @@
       "args": [
         "run",
         "--project",
-        "${workspaceFolder}/SnakeProject.csproj"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
+        "${workspaceFolder}/Snake project/SnakeProject.csproj"
+      ]
     }
   ]
 }

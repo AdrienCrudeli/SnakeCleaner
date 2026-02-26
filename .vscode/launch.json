@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch SnakeProject",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build SnakeProject",
+      "program": "${workspaceFolder}/Snake project/bin/Debug/net10.0/SnakeProject.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Snake project",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}

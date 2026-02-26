@@ -1,0 +1,15 @@
+/Users/adrien/Desktop/utb/advanced programming/Snake project/bin/Debug/net10.0/SnakeProject
+/Users/adrien/Desktop/utb/advanced programming/Snake project/bin/Debug/net10.0/SnakeProject.deps.json
+/Users/adrien/Desktop/utb/advanced programming/Snake project/bin/Debug/net10.0/SnakeProject.runtimeconfig.json
+/Users/adrien/Desktop/utb/advanced programming/Snake project/bin/Debug/net10.0/SnakeProject.dll
+/Users/adrien/Desktop/utb/advanced programming/Snake project/bin/Debug/net10.0/SnakeProject.pdb
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.AssemblyInfoInputs.cache
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.AssemblyInfo.cs
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.csproj.CoreCompileInputs.cache
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.sourcelink.json
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.dll
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/refint/SnakeProject.dll
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.pdb
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/SnakeProject.genruntimeconfig.cache
+/Users/adrien/Desktop/utb/advanced programming/Snake project/obj/Debug/net10.0/ref/SnakeProject.dll
