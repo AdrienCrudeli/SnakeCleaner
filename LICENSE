@@ -1,0 +1,21 @@
+This repository contains a refactoring of a console Snake game originally published on
+Code Review Stack Exchange.
+
+    Original work: https://codereview.stackexchange.com/q/127515
+    Posted by Wagacca, modified by the community
+    Retrieved 2026-02-12
+    Licensed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+Because this is a derivative work of CC BY-SA 3.0 material, the whole of this repository —
+both the original `snake.cs` and the refactored sources under `Snake project/` — is
+distributed under the same licence.
+
+    Refactoring copyright (c) 2026 Adrien Crudeli
+    Licensed under CC BY-SA 3.0
+
+You are free to share and adapt this material, including commercially, provided you give
+appropriate credit to the original authors and to this derivative, and distribute any
+adaptation under CC BY-SA 3.0 or a compatible licence.
+
+Full licence text: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+Summary: https://creativecommons.org/licenses/by-sa/3.0/
